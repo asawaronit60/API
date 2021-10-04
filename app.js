@@ -27,16 +27,16 @@ app.route("/article").get((req,res)=>{
   })
   .post((req,res)=>{
 
-    let article  =new Article();
+    var article  =new Article();
 
     article.title =req.body.title;
     article.content = req.body.content;
 
     article.save((err)=>{
     if(!err) res.send("Successfully added to the database")
-    else   {
+    else   
         res.send(err);
-    }
+    
    }); 
  }).delete((req,res)=>{
     Article.deleteMany({},(err)=>{
