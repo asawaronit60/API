@@ -27,7 +27,7 @@ app.route("/article").get((req,res)=>{
   })
   .post((req,res)=>{
 
-    var article  =new Article();
+    let article  =new Article();
 
     article.title =req.body.title;
     article.content = req.body.content;
